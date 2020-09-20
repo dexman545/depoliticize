@@ -15,7 +15,7 @@ public class No {
     private void no(@Nullable Screen screen, CallbackInfo ci) {
         if (screen == null) return;
         if (screen.getClass().getPackage().getName().contains("vazkii") &&
-                !(screen.getClass().getPackage().getName().contains("book") || screen instanceof AdvancementsScreen)) {
+                !(screen.getClass().getPackage().getName().contains("book") || !(screen instanceof AdvancementsScreen))) {
             ci.cancel();
         }
     }
